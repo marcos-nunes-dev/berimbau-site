@@ -4,11 +4,14 @@ import "./globals.css";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 import { tayBirdie, tayBenditos } from "@/lib/fonts";
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: "Berimbau Brazilian Table - Authentic Brazilian Restaurant NYC",
-  description: "Experience authentic Brazilian cuisine at Berimbau Brazilian Table. Two NYC locations in West Village and Midtown. Brazil is a feeling - discover our cultural space where flavors become feelings and moments become memories.",
-  keywords: ["brazilian restaurant", "brazilian food nyc", "west village restaurant", "midtown restaurant", "authentic brazilian cuisine", "berimbau nyc", "brazilian table", "caipirinha", "brazilian culture", "nyc dining", "reservations", "delivery"],
-});
+export const metadata: Metadata = {
+  metadataBase: new URL('https://berimbaurestaurant.com'),
+  ...generateSEOMetadata({
+    title: "Berimbau Brazilian Table - Authentic Brazilian Restaurant NYC",
+    description: "Experience authentic Brazilian cuisine at Berimbau Brazilian Table. Two NYC locations in West Village and Midtown. Brazil is a feeling - discover our cultural space where flavors become feelings and moments become memories.",
+    keywords: ["brazilian restaurant", "brazilian food nyc", "west village restaurant", "midtown restaurant", "authentic brazilian cuisine", "berimbau nyc", "brazilian table", "caipirinha", "brazilian culture", "nyc dining", "reservations", "delivery"],
+  }),
+};
 
 export default function RootLayout({
   children,
