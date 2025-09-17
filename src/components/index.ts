@@ -20,3 +20,4 @@ export { default as DeliverySection } from './DeliverySection';
 export { default as ReviewsSection } from './ReviewsSection';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
+export { default as FullscreenMenu } from './FullscreenMenu';

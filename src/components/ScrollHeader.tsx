@@ -1,15 +1,21 @@
 'use client'
 
+import { useState } from "react";
 import Image from "next/image";
+import FullscreenMenu from './FullscreenMenu';
 
 interface ScrollHeaderProps {
   isVisible: boolean;
 }
 
 export default function ScrollHeader({ isVisible }: ScrollHeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   if (!isVisible) return null;
 
   return (
+    <>
+      <FullscreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf0d2] shadow-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-3 sm:py-4">
         {/* Left Logo */}
@@ -26,8 +32,8 @@ export default function ScrollHeader({ isVisible }: ScrollHeaderProps) {
 
         {/* Right Menu Button */}
         <div className="flex items-center">
-          <a
-            href="/menu"
+          <button
+            onClick={() => setIsMenuOpen(true)}
             className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-all duration-300 ease-in-out transform hover:scale-105"
           >
             <Image
@@ -53,9 +59,10 @@ export default function ScrollHeader({ isVisible }: ScrollHeaderProps) {
               }}
               priority
             />
-          </a>
+          </button>
         </div>
       </div>
     </header>
+    </>
   );
 }

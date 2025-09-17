@@ -1,10 +1,16 @@
 'use client'
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import FullscreenMenu from './FullscreenMenu';
 
 export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
+    <>
+      <FullscreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     <div className="relative flex justify-between items-start p-3 sm:p-4 md:p-6 lg:p-8">
       {/* Left Navigation */}
       <div className="text-white uppercase text-xs sm:text-sm font-sans tracking-wide flex-1 max-w-[120px] sm:max-w-none">
@@ -81,8 +87,8 @@ export default function Navigation() {
 
       {/* Right Navigation */}
       <div className="text-white uppercase text-xs sm:text-sm font-sans tracking-wide flex items-center gap-1 sm:gap-2 md:gap-4 flex-1 justify-end max-w-[80px] sm:max-w-none">
-        <a
-          href="/menu"
+        <button
+          onClick={() => setIsMenuOpen(true)}
           className="flex items-center gap-1 sm:gap-4 hover:text-amber-300 transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           <Image
@@ -108,8 +114,9 @@ export default function Navigation() {
             }}
             priority
           />
-        </a>
+        </button>
       </div>
     </div>
+    </>
   );
 }
