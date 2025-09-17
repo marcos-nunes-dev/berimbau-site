@@ -6,7 +6,7 @@ interface SEOProps {
   keywords?: string[]
   image?: string
   url?: string
-  type?: 'website' | 'article' | 'product'
+  type?: 'website' | 'article'
   publishedTime?: string
   modifiedTime?: string
   author?: string
@@ -15,11 +15,11 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: 'Berimbau - Your Website Title',
-  description: 'Your website description here',
-  keywords: ['your', 'keywords', 'here'],
-  image: '/og-image.jpg',
-  url: 'https://berimbau.com',
+  title: 'Berimbau Brazilian Table - Authentic Brazilian Restaurant NYC',
+  description: 'Experience authentic Brazilian cuisine at Berimbau Brazilian Table. Two NYC locations in West Village and Midtown. Brazil is a feeling - discover our cultural space where flavors become feelings and moments become memories.',
+  keywords: ['brazilian restaurant', 'brazilian food nyc', 'west village restaurant', 'midtown restaurant', 'authentic brazilian cuisine', 'berimbau nyc', 'brazilian table', 'caipirinha', 'brazilian culture', 'nyc dining', 'reservations', 'delivery'],
+  image: '/img/couple_hero.jpg',
+  url: 'https://berimbaurestaurant.com',
   type: 'website' as const,
 }
 
@@ -48,14 +48,14 @@ export function generateMetadata({
     keywords: keywords || defaultSEO.keywords,
     authors: author ? [{ name: author }] : undefined,
     creator: author,
-    publisher: 'Berimbau',
+    publisher: 'Berimbau Brazilian Table',
     
     // Open Graph
     openGraph: {
       title: seoTitle,
       description: seoDescription,
       url: seoUrl,
-      siteName: 'Berimbau',
+      siteName: 'Berimbau Brazilian Table',
       images: [
         {
           url: seoImage,
@@ -78,7 +78,7 @@ export function generateMetadata({
       title: seoTitle,
       description: seoDescription,
       images: [seoImage],
-      creator: '@berimbau',
+      creator: '@berimbau_nyc',
     },
 
     // Additional metadata
@@ -127,7 +127,7 @@ export function generateStructuredData({
   author,
   publishedTime,
   modifiedTime,
-}: SEOProps & { type?: string }) {
+}: Omit<SEOProps, 'type'> & { type?: string } = {}) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': type,

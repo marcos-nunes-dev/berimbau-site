@@ -16,7 +16,7 @@ export default function HeroSection() {
           loop
           playsInline
         >
-          <source src="/background.mov" type="video/mp4" />
+          <source src="https://drive.google.com/uc?export=download&id=1QkQkvqzyudldNFpghZMOmw_OHvYDmY5E" type="video/mp4" />
           {/* Fallback image if video fails to load */}
           <div
             className="absolute inset-0 bg-cover bg-top bg-no-repeat"

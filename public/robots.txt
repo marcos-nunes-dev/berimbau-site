@@ -1,9 +1,11 @@
+# *
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://berimbau.com/sitemap.xml
-
-# Disallow admin and API routes
 Disallow: /admin/
 Disallow: /api/
+
+# Host
+Host: https://berimbau.com
+
+# Sitemaps
+Sitemap: https://berimbau.com/sitemap.xml
