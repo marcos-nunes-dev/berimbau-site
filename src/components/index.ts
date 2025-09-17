@@ -1,0 +1,22 @@
+// Export all components for cleaner imports
+export { default as ScrollHeader } from './ScrollHeader';
+export { default as Navigation } from './Navigation';
+export { default as ReservationSection } from './ReservationSection';
+export { default as HeroHeadline } from './HeroHeadline';
+export { default as HeroSection } from './HeroSection';
+export { default as LeftImageColumn } from './LeftImageColumn';
+export { default as CenterLogo } from './CenterLogo';
+export { default as AboutSection } from './AboutSection';
+export { default as YellowSection } from './YellowSection';
+export { default as SliderSection } from './SliderSection';
+export { default as SlideItem } from './SlideItem';
+export { default as SliderNavigation } from './SliderNavigation';
+export { default as LocationSection } from './LocationSection';
+export { default as LocationSectionInverted } from './LocationSectionInverted';
+export { default as EventsCateringSection } from './EventsCateringSection';
+export { default as CoralSliderSection } from './CoralSliderSection';
+export { default as CoralEventsCateringSection } from './CoralEventsCateringSection';
+export { default as DeliverySection } from './DeliverySection';
+export { default as ReviewsSection } from './ReviewsSection';
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';

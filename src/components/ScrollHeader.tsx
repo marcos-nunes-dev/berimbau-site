@@ -1,0 +1,61 @@
+'use client'
+
+import Image from "next/image";
+
+interface ScrollHeaderProps {
+  isVisible: boolean;
+}
+
+export default function ScrollHeader({ isVisible }: ScrollHeaderProps) {
+  if (!isVisible) return null;
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf0d2] shadow-md transition-all duration-300 ease-in-out">
+      <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-3 sm:py-4">
+        {/* Left Logo */}
+        <div className="flex-shrink-0">
+          <Image
+            src="/img/logo-head.png"
+            alt="Berimbau logo"
+            width={620}
+            height={620}
+            className="w-42 object-contain"
+            priority
+          />
+        </div>
+
+        {/* Right Menu Button */}
+        <div className="flex items-center">
+          <a
+            href="/menu"
+            className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            <Image
+              src="/img/birdie-green-icon.png"
+              alt="Menu icon"
+              width={50}
+              height={50}
+              className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse"
+              style={{
+                animation: "birdieMove 3s ease-in-out infinite",
+              }}
+              priority
+            />
+            <span className="text-[#004100] text-sm sm:text-base font-sans uppercase tracking-wide font-medium">MENU</span>
+            <Image
+              src="/img/birdie-green-icon.png"
+              alt="Menu icon"
+              width={50}
+              height={50}
+              className="w-4 h-4 sm:w-5 sm:h-5 rotate-180"
+              style={{
+                animation: "birdieMove 3s ease-in-out infinite reverse",
+              }}
+              priority
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
