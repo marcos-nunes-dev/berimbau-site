@@ -24,7 +24,7 @@ export default function CoralEventsCateringSection() {
               BRAZILIAN{"\n"}LISTENING BAR
             </h2>
             <p className="text-[#004100] text-sm sm:text-base md:text-lg leading-relaxed">
-              The Brazilian Table is more than a place to eat, it's a cultural space we share. It's where stories unfold, bonds grow stronger, and time slows down. Around the table, flavors become feelings, moments become memories, and every dish invites you to stay a little longer.
+              The Brazilian Table is more than a place to eat, it&apos;s a cultural space we share. It&apos;s where stories unfold, bonds grow stronger, and time slows down. Around the table, flavors become feelings, moments become memories, and every dish invites you to stay a little longer.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function CoralEventsCateringSection() {
               BRAZILIAN{"\n"}LISTENING BAR
             </h2>
             <p className="text-[#004100] text-lg xl:text-xl leading-relaxed whitespace-pre-line">
-              The Brazilian Table is more than a place{"\n"}to eat,it's a cultural space we share.{"\n"}It's where stories unfold, bonds grow{"\n"}stronger, and time slows down.{"\n"}Around the table, flavors become feelings,{"\n"}moments become memories, and every dish{"\n"}invites you to stay a little longer.
+              The Brazilian Table is more than a place{"\n"}to eat, it&apos;s a cultural space we share.{"\n"}It&apos;s where stories unfold, bonds grow{"\n"}stronger, and time slows down.{"\n"}Around the table, flavors become feelings,{"\n"}moments become memories, and every dish{"\n"}invites you to stay a little longer.
             </p>
           </div>
         </div>

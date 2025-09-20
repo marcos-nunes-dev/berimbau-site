@@ -69,7 +69,6 @@ export default function SliderSection() {
             key={slide.id}
             image={slide.image}
             title={slide.title}
-            subtitle={slide.subtitle}
             logo={slide.logo}
             isActive={index === currentSlide}
           />

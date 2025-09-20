@@ -10,7 +10,7 @@ interface SlideItemProps {
   isActive: boolean;
 }
 
-export default function SlideItem({ image, title, subtitle, logo, isActive }: SlideItemProps) {
+export default function SlideItem({ image, title, logo, isActive }: Omit<SlideItemProps, 'subtitle'>) {
   return (
     <div className={`absolute inset-0 h-screen w-full transition-opacity duration-500 ${isActive ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
       {/* Background Image */}

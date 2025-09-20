@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import ScrollHeader from "@/components/ScrollHeader";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function ContactPage() {

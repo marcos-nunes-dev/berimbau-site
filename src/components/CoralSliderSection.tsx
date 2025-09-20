@@ -46,10 +46,9 @@ interface CoralSlideItemProps {
 function CoralSlideItem({
   image,
   title,
-  subtitle,
   logo,
   isActive,
-}: CoralSlideItemProps) {
+}: Omit<CoralSlideItemProps, 'subtitle'>) {
   return (
     <div
       className={`absolute inset-0 transition-opacity duration-500 ${
@@ -182,7 +181,6 @@ export default function CoralSliderSection() {
                 key={slide.id}
                 image={slide.image}
                 title={slide.title}
-                subtitle={slide.subtitle}
                 logo={slide.logo}
                 isActive={index === currentSlide}
               />
