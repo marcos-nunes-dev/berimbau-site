@@ -3,6 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Extend Window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 export default function ReservationSection() {
   return (
     <div className="flex-1 flex items-center justify-center px-4">
@@ -24,6 +31,14 @@ export default function ReservationSection() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.dataLayer) {
+                window.dataLayer.push({
+                  event: 'click_reservation',
+                  location: 'west_village'
+                });
+              }
+            }}
           >
             RESERVATIONS WEST VILLAGE
           </motion.button>
@@ -58,6 +73,14 @@ export default function ReservationSection() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.dataLayer) {
+                window.dataLayer.push({
+                  event: 'click_reservation',
+                  location: 'midtown'
+                });
+              }
+            }}
           >
             RESERVATIONS MIDTOWN
           </motion.button>

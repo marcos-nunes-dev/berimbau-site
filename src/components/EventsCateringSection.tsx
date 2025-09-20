@@ -2,6 +2,13 @@
 
 import Image from "next/image";
 
+// Extend Window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 export default function EventsCateringSection() {
   return (
     <section className="h-auto lg:h-screen w-full bg-[#F7A800] overflow-hidden">
@@ -18,7 +25,16 @@ export default function EventsCateringSection() {
             <p className="text-[#225533] mt-8 sm:mt-12 md:mt-16 lg:mt-20 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
               Plan your private event in our intimate venues, where Brazilian warmth meets New York City elegance. Indulge in authentic flavors and crafted cocktails for any celebration. Let our attentive team ensure a seamless, memorable experience for you and your guests.
             </p>
-            <button className="border-2 border-[#225533] px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-[#225533] text-sm sm:text-base md:text-lg font-medium uppercase tracking-wide hover:bg-[#225533] hover:text-[#F7A800] transition-all duration-300">
+            <button 
+              className="border-2 border-[#225533] px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-[#225533] text-sm sm:text-base md:text-lg font-medium uppercase tracking-wide hover:bg-[#225533] hover:text-[#F7A800] transition-all duration-300"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'click_events'
+                  });
+                }
+              }}
+            >
               EVENTS INQUIRIES
             </button>
           </div>
@@ -40,7 +56,16 @@ export default function EventsCateringSection() {
             <p className="text-[#225533] mt-8 sm:mt-12 md:mt-16 lg:mt-20 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
               Our catering menu is a celebration of Brazil&apos;s rich culinary traditions, from classic dishes like Feijoada and Moqueca to innovative Brazilian-inspired creations, our menu is customizable to fit your event&apos;s theme and dietary preferences.
             </p>
-            <button className="border-2 border-[#225533] px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-[#225533] text-sm sm:text-base md:text-lg font-medium uppercase tracking-wide hover:bg-[#225533] hover:text-[#F7A800] transition-all duration-300">
+            <button 
+              className="border-2 border-[#225533] px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-[#225533] text-sm sm:text-base md:text-lg font-medium uppercase tracking-wide hover:bg-[#225533] hover:text-[#F7A800] transition-all duration-300"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'click_catering'
+                  });
+                }
+              }}
+            >
               CATERING INQUIRIES
             </button>
           </div>

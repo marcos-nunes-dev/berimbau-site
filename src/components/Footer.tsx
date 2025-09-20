@@ -2,6 +2,13 @@
 
 import Image from "next/image";
 
+// Extend Window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#faf0d2] overflow-hidden">
@@ -22,7 +29,16 @@ export default function Footer() {
                 placeholder="NAME@EMAIL.COM"
                 className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-4 py-3 text-sm font-medium uppercase tracking-wide placeholder-[#225533] focus:outline-none focus:ring-2 focus:ring-[#225533] w-full text-center"
               />
-              <button className="border-2 border-[#225533] bg-[#225533] text-[#faf0d2] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-[#004100] transition-all duration-300 w-full">
+              <button 
+                className="border-2 border-[#225533] bg-[#225533] text-[#faf0d2] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-[#004100] transition-all duration-300 w-full"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_subscribe'
+                    });
+                  }
+                }}
+              >
                 SUBSCRIBE
               </button>
             </div>
@@ -34,7 +50,16 @@ export default function Footer() {
                 placeholder="NAME@EMAIL.COM"
                 className="border-t-2 border-b-2 border-l-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-medium uppercase tracking-wide placeholder-[#225533] focus:outline-none focus:ring-2 focus:ring-[#225533] min-w-[300px] lg:min-w-[400px]"
               />
-              <button className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-bold uppercase tracking-wide hover:bg-[#225533] hover:text-[#faf0d2] transition-all duration-300 whitespace-nowrap">
+              <button 
+                className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-bold uppercase tracking-wide hover:bg-[#225533] hover:text-[#faf0d2] transition-all duration-300 whitespace-nowrap"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_subscribe'
+                    });
+                  }
+                }}
+              >
                 SUBSCRIBE
               </button>
             </div>

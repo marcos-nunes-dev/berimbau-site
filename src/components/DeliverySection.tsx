@@ -2,6 +2,13 @@
 
 import Image from "next/image";
 
+// Extend Window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 export default function DeliverySection() {
   return (
     <section className="min-h-[60vh] h-auto lg:h-screen w-full overflow-hidden relative">
@@ -60,10 +67,30 @@ export default function DeliverySection() {
             
             {/* Location Buttons */}
             <div className="flex flex-col gap-3 sm:gap-4">
-              <button className="border-2 border-[#faaa00] px-6 sm:px-8 py-3 text-[#faaa00] text-sm sm:text-base font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300">
+              <button 
+                className="border-2 border-[#faaa00] px-6 sm:px-8 py-3 text-[#faaa00] text-sm sm:text-base font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_delivery',
+                      location: 'midtown'
+                    });
+                  }
+                }}
+              >
                 MIDTOWN
               </button>
-              <button className="border-2 border-[#faaa00] px-6 sm:px-8 py-3 text-[#faaa00] text-sm sm:text-base font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300">
+              <button 
+                className="border-2 border-[#faaa00] px-6 sm:px-8 py-3 text-[#faaa00] text-sm sm:text-base font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_delivery',
+                      location: 'west_village'
+                    });
+                  }
+                }}
+              >
                 WEST VILLAGE
               </button>
             </div>
@@ -131,10 +158,30 @@ export default function DeliverySection() {
             
             {/* Location Buttons */}
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 justify-center">
-              <button className="border-2 border-[#faaa00] px-8 lg:px-12 xl:px-16 py-3 lg:py-4 text-[#faaa00] text-sm lg:text-base xl:text-lg font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300">
+              <button 
+                className="border-2 border-[#faaa00] px-8 lg:px-12 xl:px-16 py-3 lg:py-4 text-[#faaa00] text-sm lg:text-base xl:text-lg font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_delivery',
+                      location: 'midtown'
+                    });
+                  }
+                }}
+              >
                 MIDTOWN
               </button>
-              <button className="border-2 border-[#faaa00] px-8 lg:px-12 xl:px-16 py-3 lg:py-4 text-[#faaa00] text-sm lg:text-base xl:text-lg font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300">
+              <button 
+                className="border-2 border-[#faaa00] px-8 lg:px-12 xl:px-16 py-3 lg:py-4 text-[#faaa00] text-sm lg:text-base xl:text-lg font-medium font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faaa00] hover:text-[#004100] transition-all duration-300"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_delivery',
+                      location: 'west_village'
+                    });
+                  }
+                }}
+              >
                 WEST VILLAGE
               </button>
             </div>

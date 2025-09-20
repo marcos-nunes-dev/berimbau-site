@@ -4,6 +4,13 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Extend Window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 interface FullscreenMenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -284,7 +291,15 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
               <motion.a
                 href="/reservations/west-village"
                 className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-normal font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
-                onClick={onClose}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_reservation',
+                      location: 'west_village'
+                    });
+                  }
+                  onClose();
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -294,7 +309,15 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
               <motion.a
                 href="/reservations/midtown"
                 className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-normal font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
-                onClick={onClose}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.dataLayer) {
+                    window.dataLayer.push({
+                      event: 'click_reservation',
+                      location: 'midtown'
+                    });
+                  }
+                  onClose();
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
