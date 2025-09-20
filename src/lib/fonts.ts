@@ -37,3 +37,22 @@ export const tayBenditos = localFont({
   display: 'swap',
   preload: true,
 })
+
+// GT America - Modern font
+export const gtAmerica = localFont({
+  src: [
+    {
+      path: '../../public/fonts/GT-America-Mono-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/GT-America-Mono-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-gt-america',
+  display: 'swap',
+  preload: true,
+})

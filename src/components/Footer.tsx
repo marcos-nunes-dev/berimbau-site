@@ -9,20 +9,35 @@ export default function Footer() {
       <div className="px-8 sm:px-12 md:px-16 lg:px-20 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Newsletter Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#225533] uppercase tracking-wider mb-8 sm:mb-10">
-            SUBSCRIBE TO OUR NEWSLETTER FOR UPDATES & SPECIAL OFFERS
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal font-[family-name:var(--font-gt-america)] text-[#225533] uppercase tracking-wider mb-8 sm:mb-10">
+            SUBSCRIBE TO OUR NEWSLETTER<br />FOR UPDATES & SPECIAL OFFERS
           </h2>
           
           {/* Subscription Form */}
-          <div className="flex flex-col sm:flex-row justify-center items-center mb-8 sm:mb-10">
-            <input
-              type="email"
-              placeholder="NAME@EMAIL.COM"
-              className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium uppercase tracking-wide placeholder-[#225533] focus:outline-none focus:ring-2 focus:ring-[#225533] w-full sm:w-auto sm:min-w-[400px]"
-            />
-            <button className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide hover:bg-[#225533] hover:text-[#faf0d2] transition-all duration-300 whitespace-nowrap w-full sm:w-auto">
-              SUBSCRIBE
-            </button>
+          <div className="mb-8 sm:mb-10">
+            {/* Mobile/Tablet Layout - Stacked */}
+            <div className="flex flex-col md:hidden space-y-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="NAME@EMAIL.COM"
+                className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-4 py-3 text-sm font-medium uppercase tracking-wide placeholder-[#225533] focus:outline-none focus:ring-2 focus:ring-[#225533] w-full text-center"
+              />
+              <button className="border-2 border-[#225533] bg-[#225533] text-[#faf0d2] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-[#004100] transition-all duration-300 w-full">
+                SUBSCRIBE
+              </button>
+            </div>
+            
+            {/* Desktop Layout - Side by Side */}
+            <div className="hidden md:flex justify-center items-center">
+              <input
+                type="email"
+                placeholder="NAME@EMAIL.COM"
+                className="border-t-2 border-b-2 border-l-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-medium uppercase tracking-wide placeholder-[#225533] focus:outline-none focus:ring-2 focus:ring-[#225533] min-w-[300px] lg:min-w-[400px]"
+              />
+              <button className="border-2 border-[#225533] bg-[#faf0d2] text-[#225533] px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-bold uppercase tracking-wide hover:bg-[#225533] hover:text-[#faf0d2] transition-all duration-300 whitespace-nowrap">
+                SUBSCRIBE
+              </button>
+            </div>
           </div>
           
           {/* Social Media */}
@@ -38,30 +53,28 @@ export default function Footer() {
           {/* Three Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-16 items-center">
             {/* Left Column - West Village */}
-            <div className="text-center lg:text-left">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-[#225533] uppercase tracking-wider mb-4 sm:mb-6">
+            <div className="text-center space-y-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-normal font-[family-name:var(--font-gt-america)] text-[#225533] uppercase tracking-wider">
                 WEST VILLAGE
               </h3>
-              <p className="text-[#225533] text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
+              <p className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)]">
                 43 Carmine St, New York, NY 10014
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center lg:justify-start mb-4 sm:mb-6">
-                <a href="/menus" className="text-[#225533] text-sm sm:text-base md:text-lg underline hover:no-underline">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
+                <a href="/menus" className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)] underline hover:no-underline">
                   MENUS
                 </a>
-                <a href="/reservations" className="text-[#225533] text-sm sm:text-base md:text-lg underline hover:no-underline">
+                <span className="hidden sm:inline text-[#225533]">-</span>
+                <a href="/reservations" className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)] underline hover:no-underline">
                   RESERVATION
                 </a>
               </div>
-              <p className="text-[#225533] text-sm sm:text-base md:text-lg">
-                info@berimbaurestaurant.com
-              </p>
             </div>
 
             {/* Center - Brand Logo */}
             <div className="flex justify-center">
               <Image
-                src="/img/logo-white.png"
+                src="/img/logo-green.png"
                 alt="BR/NY Logo"
                 width={200}
                 height={200}
@@ -71,18 +84,19 @@ export default function Footer() {
             </div>
 
             {/* Right Column - Midtown */}
-            <div className="text-center lg:text-right">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-[#225533] uppercase tracking-wider mb-4 sm:mb-6">
+            <div className="text-center space-y-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-normal font-[family-name:var(--font-gt-america)] text-[#225533] uppercase tracking-wider">
                 MIDTOWN
               </h3>
-              <p className="text-[#225533] text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
+              <p className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)]">
                 3 West 36th Street, New York, NY 10018
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center lg:justify-end mb-4 sm:mb-6">
-                <a href="/menus" className="text-[#225533] text-sm sm:text-base md:text-lg underline hover:no-underline">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
+                <a href="/menus" className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)] underline hover:no-underline">
                   MENUS
                 </a>
-                <a href="/reservations" className="text-[#225533] text-sm sm:text-base md:text-lg underline hover:no-underline">
+                <span className="hidden sm:inline text-[#225533]">-</span>
+                <a href="/reservations" className="text-[#225533] text-sm sm:text-base md:text-lg font-[family-name:var(--font-gt-america)] underline hover:no-underline">
                   RESERVATION
                 </a>
               </div>
@@ -91,10 +105,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Copyright and Email */}
       <div className="px-8 sm:px-12 md:px-16 lg:px-20 py-6 sm:py-8">
-        <div className="max-w-7xl mx-auto text-right">
-          <p className="text-[#225533] text-sm sm:text-base">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+          <p className="text-[#225533] text-sm sm:text-base font-[family-name:var(--font-gt-america)] mb-2 sm:mb-0">
+            info@berimbaurestaurant.com
+          </p>
+          <p className="text-[#225533] text-sm sm:text-base font-[family-name:var(--font-gt-america)]">
             © 2025 by Berimbau Brazilian Table
           </p>
         </div>

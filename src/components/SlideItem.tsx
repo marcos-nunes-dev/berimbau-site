@@ -30,12 +30,9 @@ export default function SlideItem({ image, title, subtitle, logo, isActive }: Sl
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
         {/* Main Text */}
         <div className="mb-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-normal text-white tracking-wider leading-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-normal text-white tracking-wider whitespace-pre-line" style={{ lineHeight: '0.8' }}>
             {title}
           </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-normal text-white tracking-wider leading-tight">
-            {subtitle}
-          </h3>
         </div>
 
         {/* Logo */}

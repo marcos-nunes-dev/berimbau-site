@@ -16,24 +16,31 @@ const slides: Slide[] = [
   {
     id: 1,
     image: "/img/slide1.jpg",
-    title: "NYC'S FIRST",
-    subtitle: "CAIPIRINHA BAR",
+    title: "NYC FIRST\nCAIPIRINHA BAR",
+    subtitle: "",
     logo: "/img/logo-white.png"
   },
   {
     id: 2,
-    image: "/img/slide2.jpg",
-    title: "AUTHENTIC",
-    subtitle: "BRAZILIAN FLAVORS",
+    image: "/img/slide1.jpg",
+    title: "NYC FIRST\nCAIPIRINHA BAR",
+    subtitle: "",
     logo: "/img/logo-white.png"
   },
-  {
-    id: 3,
-    image: "/img/couple_hero.jpg",
-    title: "VIBRANT",
-    subtitle: "NIGHTLIFE",
-    logo: "/img/logo-white.png"
-  }
+  // {
+  //   id: 2,
+  //   image: "/img/slide2.jpg",
+  //   title: "AUTHENTIC\nBRAZILIAN FLAVORS",
+  //   subtitle: "",
+  //   logo: "/img/logo-white.png"
+  // },
+  // {
+  //   id: 3,
+  //   image: "/img/couple_hero.jpg",
+  //   title: "VIBRANT\nNIGHTLIFE",
+  //   subtitle: "",
+  //   logo: "/img/logo-white.png"
+  // }
 ];
 
 export default function SliderSection() {

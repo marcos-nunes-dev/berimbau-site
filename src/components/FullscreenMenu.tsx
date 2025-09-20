@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,11 +10,24 @@ interface FullscreenMenuProps {
 }
 
 export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps) {
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 bg-[#004100] flex flex-col justify-between items-center text-center py-8"
+          className="fixed inset-0 z-[9999] bg-[#004100] flex flex-col justify-between items-center text-center py-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -23,7 +37,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
           <div className="flex flex-col items-center">
             {/* Close Button */}
             <motion.button
-              className="absolute top-8 right-8 text-[#faab00] text-xl font-medium uppercase tracking-wider hover:opacity-80 transition-opacity"
+              className="absolute top-8 right-8 text-[#faab00] text-xl font-normal font-[family-name:var(--font-gt-america)] uppercase tracking-wider hover:font-bold transition-all duration-300 ease-in-out cursor-pointer"
               onClick={onClose}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,7 +75,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             >
             <motion.a
               href="/"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -85,7 +100,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             
             <motion.a
               href="#locations"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -109,7 +125,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#private-events"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -133,7 +150,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#second-floor"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -157,7 +175,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#delivery"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -181,7 +200,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#contact"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -205,7 +225,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#careers"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -229,7 +250,8 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
 
             <motion.a
               href="#giftcard"
-              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:opacity-80 transition-opacity flex items-center gap-2 group"
+              className="text-[#faab00] text-lg sm:text-xl md:text-2xl font-medium uppercase tracking-wide hover:underline transition-all duration-300 ease-in-out flex items-center gap-2 group"
+              style={{ textUnderlineOffset: '8px' }}
               onClick={onClose}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -261,7 +283,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             >
               <motion.a
                 href="/reservations/west-village"
-                className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-medium uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
+                className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-normal font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
                 onClick={onClose}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -271,7 +293,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
               
               <motion.a
                 href="/reservations/midtown"
-                className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-medium uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
+                className="border-2 border-[#faab00] text-[#faab00] px-8 py-3 text-lg font-normal font-[family-name:var(--font-gt-america)] uppercase tracking-wide hover:bg-[#faab00] hover:text-[#004100] transition-all duration-300"
                 onClick={onClose}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

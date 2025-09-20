@@ -18,7 +18,7 @@ export default function LeftImageColumn() {
           alt="Image 2"
           width={2000}
           height={2000}
-          className="w-full max-w-[45vh] sm:max-w-[50vh] md:max-w-[55vh] lg:max-w-[60vh] absolute bottom-[-10vh] left-0 pointer-events-none"
+          className="w-full max-w-[45vh] sm:max-w-[50vh] md:max-w-[55vh] lg:max-w-[60vh] absolute bottom-[5vh] left-0 pointer-events-none"
         />
         <Image
           src="/img/3.png"

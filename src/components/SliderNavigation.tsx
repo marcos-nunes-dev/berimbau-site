@@ -26,7 +26,7 @@ export default function SliderNavigation({ onPrevious, onNext }: SliderNavigatio
               className="w-6 h-13 sm:w-7 sm:h-14 md:w-8 md:h-15 rotate-180"
             />
           </div>
-          <span className="text-white text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          <span className="text-white group-hover:text-[#fe9b86] text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
             PREVIOUS
           </span>
         </div>
@@ -39,7 +39,7 @@ export default function SliderNavigation({ onPrevious, onNext }: SliderNavigatio
         aria-label="Next slide"
       >
         <div className="flex items-center gap-2 sm:gap-3">
-          <span className="text-white text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          <span className="text-white group-hover:text-[#fe9b86] text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
             NEXT
           </span>
           <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-110">

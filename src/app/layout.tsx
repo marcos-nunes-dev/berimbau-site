@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
-import { tayBirdie, tayBenditos } from "@/lib/fonts";
+import { tayBirdie, tayBenditos, gtAmerica } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://berimbaurestaurant.com'),
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${tayBirdie.variable} ${tayBenditos.variable}`}>
+    <html lang="en" className={`${tayBirdie.variable} ${tayBenditos.variable} ${gtAmerica.variable}`}>
       <body className="antialiased">
         {/* Google Tag Manager */}
         <Script

@@ -13,11 +13,12 @@ export default function Navigation() {
       <FullscreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     <div className="relative flex justify-between items-start p-3 sm:p-4 md:p-6 lg:p-8">
       {/* Left Navigation */}
-      <div className="text-white uppercase text-xs sm:text-sm font-sans tracking-wide flex-1 max-w-[120px] sm:max-w-none">
-        <div className="mb-1 md:mb-2 text-xs sm:text-sm leading-tight">
+      <div className="text-white uppercase text-xs sm:text-sm font-[family-name:var(--font-gt-america)] tracking-wide flex-1 max-w-[120px] sm:max-w-none">
+        <div className="mb-4 md:mb-8 text-xs sm:text-sm leading-tight">
           <motion.a
             href="/reservation"
-            className="hover:text-amber-300 transition-colors duration-300 ease-in-out"
+            className=" hover:underline transition-all duration-300 ease-in-out"
+            style={{ textUnderlineOffset: '10px' }}
             whileHover={{ 
               scale: 1.05, 
               y: -2
@@ -30,7 +31,8 @@ export default function Navigation() {
           <span className="mx-2">|</span>
           <motion.a
             href="/private-events"
-            className="hover:text-amber-300 transition-colors duration-300 ease-in-out"
+            className=" hover:underline transition-all duration-300 ease-in-out"
+            style={{ textUnderlineOffset: '10px' }}
             whileHover={{ 
               scale: 1.05, 
               y: -2
@@ -44,14 +46,7 @@ export default function Navigation() {
         <div className="mb-1">
           <motion.a
             href="/midtown"
-            className="underline text-sm sm:text-base hover:text-amber-300 hover:no-underline transition-all duration-300 ease-in-out"
-            whileHover={{ 
-              scale: 1.08, 
-              y: -3,
-              rotateX: 5
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="text-sm sm:text-base hover:font-bold"
           >
             MIDTOWN
           </motion.a>
@@ -59,14 +54,7 @@ export default function Navigation() {
         <div>
           <motion.a
             href="/west-village"
-            className="text-sm sm:text-base hover:text-amber-300 hover:underline transition-all duration-300 ease-in-out"
-            whileHover={{ 
-              scale: 1.08, 
-              y: -3,
-              rotateX: 5
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="text-sm sm:text-base hover:font-bold"
           >
             WEST VILLAGE
           </motion.a>
@@ -86,10 +74,10 @@ export default function Navigation() {
       </div>
 
       {/* Right Navigation */}
-      <div className="text-white uppercase text-xs sm:text-sm font-sans tracking-wide flex items-center gap-1 sm:gap-2 md:gap-4 flex-1 justify-end max-w-[80px] sm:max-w-none">
+      <div className="text-white uppercase text-xs sm:text-sm font-[family-name:var(--font-gt-america)] tracking-wide flex items-center gap-1 sm:gap-2 md:gap-4 flex-1 justify-end max-w-[80px] sm:max-w-none">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="flex items-center gap-1 sm:gap-4 hover:text-amber-300 transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="flex items-center gap-1 sm:gap-4 hover:font-bold transition-all duration-300 ease-in-out"
         >
           <Image
             src="/img/birdie-icon.png"

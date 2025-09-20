@@ -15,22 +15,22 @@ const coralSlides: Slide[] = [
   {
     id: 1,
     image: "/img/couple_hero.jpg",
-    title: "EXPERIENCE",
-    subtitle: "BRAZILIAN CULTURE",
+    title: "EXPERIENCE\nBRAZILIAN CULTURE",
+    subtitle: "",
     logo: "/img/logo-white.png",
   },
   {
     id: 2,
     image: "/img/DSC06146.jpg",
-    title: "AUTHENTIC",
-    subtitle: "FLAVORS",
+    title: "AUTHENTIC\nFLAVORS",
+    subtitle: "",
     logo: "/img/logo-white.png",
   },
   {
     id: 3,
     image: "/img/DSC08693-Enhanced-NR.jpg",
-    title: "VIBRANT",
-    subtitle: "ATMOSPHERE",
+    title: "VIBRANT\nATMOSPHERE",
+    subtitle: "",
     logo: "/img/logo-white.png",
   },
 ];
@@ -73,12 +73,9 @@ function CoralSlideItem({
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
         {/* Main Text */}
         <div className="mb-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-normal text-white tracking-wider leading-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-normal text-white tracking-wider whitespace-pre-line" style={{ lineHeight: '0.8' }}>
             {title}
           </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-normal text-white tracking-wider leading-tight">
-            {subtitle}
-          </h3>
         </div>
 
         {/* Logo */}
@@ -124,7 +121,7 @@ function CoralSliderNavigation({
               className="w-6 h-13 sm:w-7 sm:h-14 md:w-8 md:h-15 rotate-180"
             />
           </div>
-          <span className="text-white text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          <span className="text-white group-hover:text-[#fe9b86] text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
             PREVIOUS
           </span>
         </div>
@@ -137,7 +134,7 @@ function CoralSliderNavigation({
         aria-label="Next slide"
       >
         <div className="flex items-center gap-2 sm:gap-3">
-          <span className="text-white text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          <span className="text-white group-hover:text-[#fe9b86] text-sm sm:text-base md:text-lg font-sans uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
             NEXT
           </span>
           <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-110">

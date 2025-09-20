@@ -7,24 +7,26 @@ import HeroHeadline from './HeroHeadline';
 export default function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
+      {/* YouTube Video Background */}
       <div className="absolute inset-0">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="https://drive.google.com/uc?export=download&id=1QkQkvqzyudldNFpghZMOmw_OHvYDmY5E" type="video/mp4" />
-          {/* Fallback image if video fails to load */}
-          <div
-            className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+          <iframe
+            className="absolute pointer-events-none"
+            src="https://www.youtube.com/embed/_IpmG9sNjqM?si=68Djn88hpC8eQT3N&autoplay=1&mute=1&loop=1&playlist=_IpmG9sNjqM&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&playsinline=1&enablejsapi=0&origin=https://berimbaurestaurant.com"
+            title="Berimbau Background Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
             style={{
-              backgroundImage: "url('/img/couple_hero.jpg')",
+              top: '50%',
+              left: '50%',
+              width: '177.77777778vh', // 16:9 aspect ratio
+              height: '56.25vw', // 16:9 aspect ratio
+              minWidth: '100%',
+              minHeight: '100%',
+              transform: 'translate(-50%, -50%)',
+              objectFit: 'cover'
             }}
-          ></div>
-        </video>
+          />
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>

@@ -20,7 +20,7 @@ export default function ReservationSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <motion.button 
-            className="w-full lg:w-auto border-2 border-white text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 uppercase font-sans tracking-wide hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base text-center"
+            className="w-full lg:w-auto border-2 border-white text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 uppercase font-[family-name:var(--font-gt-america)] tracking-wide hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base text-center"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -54,7 +54,7 @@ export default function ReservationSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <motion.button 
-            className="w-full lg:w-auto border-2 border-white text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 uppercase font-sans tracking-wide hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base text-center"
+            className="w-full lg:w-auto border-2 border-white text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 uppercase font-[family-name:var(--font-gt-america)] tracking-wide hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base text-center"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
